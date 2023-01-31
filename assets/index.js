@@ -98,6 +98,7 @@ function initPage() {
             });
     }
 
+    //get history from local storage
     searchEl.addEventListener("click", function () {
         const searchTerm = cityEl.value;
         getWeather(searchTerm);
@@ -106,12 +107,14 @@ function initPage() {
         renderSearchHistory();
     })
 
+
+    //clear search history
     clearEl.addEventListener("click", function () {
         localStorage.clear();
         searchHistory = [];
         renderSearchHistory();
     })
-    
+
     function k2f(K) {
         return Math.floor((K - 273.15) * 1.8 + 32);
     }
