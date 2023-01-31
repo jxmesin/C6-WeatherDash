@@ -20,5 +20,20 @@ function initPage() {
         //current weathe request from open weather api
         let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
         axios.get(queryURL)
+            .then(function (response) {
+
+                todayweatherEl.classList.remove("d-none");
+
+                // display current weather
+                const currentDate = new Date(response.date.ft * 1000);
+                const day = currentDate.getDate();
+                const month = currentDate.getMonth();
+                const year = currentDate.getYear();
+                nameEl.innterHTML = response.date.name + " (" + month + "/" + day + "/" + year + ") ";
+                let weatherPic = response.data.weather[0].icon;
+                currentPicEl.setAttribute("src", "https://openweathermap.org/img/wn" + weatherPic + "@2x.png");
+                currentPicEl.setAttribute("alt", response.data.weather[0].description);
+            
+            })
     }
 }
