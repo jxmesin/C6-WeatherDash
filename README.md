@@ -18,6 +18,8 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 
 ## Mock-Up
+<img width="794" alt="Screenshot 2023-01-30 at 6 54 28 PM" src="https://user-images.githubusercontent.com/112153725/215651984-088fec79-4332-4560-9a21-a3ec502b1a84.png">
+
 
 ## URL
 https://jxmesin.github.io/C6-WeatherDash/
